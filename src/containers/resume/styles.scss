@@ -1,0 +1,84 @@
+.resume{
+    height:100%;
+
+}
+.timeline{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    &__exp,&__edu{
+        width: 50%;
+        gap:2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__head{
+            display: inline-block;
+                color:var(--subtext);
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 1rem;
+                letter-spacing: 05px;
+                position: relative;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                border-bottom: 2px solid var(--main-color);
+        }
+        &__head::after,&__head::before{
+            position:absolute;
+            content: '';
+            width:2px;
+            height:5px;
+            background-color: var(--main-color);
+            bottom:-1px;
+        }
+        &__head::after{
+            right:0;
+        }
+        &__head::before{
+            left:0;
+        }
+        &__data
+        {
+            padding:0px 0px 30px 0px;
+            &:last-child{
+                padding-bottom: 0px;
+
+            }
+        }
+        .element-data{
+            align-items: center;
+            h3,h4{
+                font-size: 16px;
+
+            }
+            h4{
+                margin-left: 8px;
+            }
+        }
+        .vertical-timeline-element-content
+        // inspect and find the class name
+        {
+            box-shadow: none;
+        }
+        .vertical-timeline-element-content-arrow
+        {
+            display: none;
+        }
+        .desc,.time{
+            font-size:16px;
+        }
+    }
+}
+@media only screen and (max-width:768px){
+    .timeline{
+        flex-direction: column;
+        &__exp,&__edu{
+            width: 100%;
+            gap:2rem;
+            margin-bottom:10px;
+        }
+        margin-bottom:10px;
+    }
+    
+}

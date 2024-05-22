@@ -1,0 +1,92 @@
+.navbar {
+    background-color: var(--nav-background);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000; // Ensure the navbar is on top of other content
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // Align items to the corners
+        width: 100%;
+        height: inherit;
+        padding: 0px 20px;
+        flex: 1;
+        &__logo {
+            color: var(--main-color);
+            cursor: pointer;
+        }
+        &__menu {
+            display: flex;
+            list-style: none;
+            text-align: center;
+            &__item {
+                line-height: 40px;
+                margin-right: 1.5rem;
+                font-size: 1.6rem;
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 3px;
+                    width: 0;
+                    background: transparent;
+                    transition: all 0.5s ease;
+                }
+                &:hover::after {
+                    width: 100%;
+                    background: var(--main-color);
+                }
+                &__link {
+                    color: var(--main-color);
+                    text-decoration: none;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.nav-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .navbar__container {
+        justify-content: space-between;
+        position: fixed; // Ensure the icons are at the corners
+    }
+
+    .navbar__container__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: fixed; // Changed to fixed
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        background: var(--nav-background);
+        transition: all 0.5s ease;
+        z-index: 1000; // Ensure the menu covers the background
+
+        &.active {
+            left: 0;
+            opacity: 1;
+        }
+        &__item {
+            border-bottom: 1px solid var(--main-color);
+            margin: 0;
+            padding: 20px 0;
+        }
+    }
+
+    .nav-icon {
+        display: block;
+        cursor: pointer;
+        color: var(--main-color);
+    }
+}

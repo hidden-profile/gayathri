@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+:root{
+    --background-color:#0f56de;
+    --main-color:#eaf614 ;
+    --subtext:#ffffff;
+    --nav-background:#1455d1;
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+    scroll-behavior: smooth;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+body{
+    background: var(--background-color);
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
