@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/gayathri/static/css/main.aa4e879e.css",
+    "main.js": "/gayathri/static/js/main.0559b6c9.js",
+    "static/media/resume new.pdf": "/gayathri/static/media/resume new.d2d5e4ac379b28de1514.pdf",
+    "static/media/profile3.jpg": "/gayathri/static/media/profile3.f449d8a86eebd53e63bc.jpg",
+    "static/media/profile5.jpg": "/gayathri/static/media/profile5.a424d27aba62ad8e6b32.jpg",
+    "static/media/profile1.jpg": "/gayathri/static/media/profile1.128a6aa6a420536a9ccf.jpg",
+    "static/media/profile4.jpg": "/gayathri/static/media/profile4.121ead5eeed6d1da77d8.jpg",
+    "static/media/project6.jpg": "/gayathri/static/media/project6.aaaded260302c926c40c.jpg",
+    "static/media/profile6.jpg": "/gayathri/static/media/profile6.ec2fa68508578d9db314.jpg",
+    "static/media/profile2.jpg": "/gayathri/static/media/profile2.f41fc869fa2df23a8693.jpg",
+    "static/media/project1.jpg": "/gayathri/static/media/project1.7c37ee114ef0c4cd3aa2.jpg",
+    "static/media/project5.jpg": "/gayathri/static/media/project5.1c4a1521ae097de344c1.jpg",
+    "static/media/project4.jpg": "/gayathri/static/media/project4.626db396eae07605fd1d.jpg",
+    "static/media/project2.jpg": "/gayathri/static/media/project2.bc7d2ad5cb536e56c5e8.jpg",
+    "static/media/project3.jpg": "/gayathri/static/media/project3.00ce09557e6ab12fb5bd.jpg",
+    "index.html": "/gayathri/index.html",
+    "main.aa4e879e.css.map": "/gayathri/static/css/main.aa4e879e.css.map",
+    "main.0559b6c9.js.map": "/gayathri/static/js/main.0559b6c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa4e879e.css",
+    "static/js/main.0559b6c9.js"
+  ]
+}
