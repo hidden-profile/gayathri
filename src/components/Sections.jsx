@@ -4,6 +4,7 @@ import { GitHubIcon, LinkedInIcon, LeetCodeIcon, CodeChefIcon, MailIcon, ArrowIc
 import codechefLogo from '../assets/codechef.png';
 import leetcodeLogo from '../assets/leetcode.jpeg';
 import hackerrankLogo from '../assets/hackerrank.png';
+import Terminal from './Terminal';
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
 const Chips = ({ items }) => (
@@ -40,25 +41,7 @@ export function Hero() {
         </div>
 
         <div className="hero-code">
-          <div className="code-frame">
-            <div className="code-window">
-              <div className="code-bar" aria-hidden="true">
-                <span className="d r" /><span className="d y" /><span className="d g" />
-                <span className="code-file">gayathri.js</span>
-              </div>
-              <pre><code>
-<span className="k">const</span> <span className="p">gayathri</span> <span className="u">= {'{'}</span>{'\n'}
-<span className="in"><span className="p">role</span><span className="u">:</span> <span className="s">'Front End Developer'</span><span className="u">,</span></span>{'\n'}
-<span className="in"><span className="p">workingOn</span><span className="u">:</span> <span className="s">'DistaUSA'</span><span className="u">,</span></span>{'\n'}
-<span className="in"><span className="p">platform</span><span className="u">:</span> <span className="s">'Shopify'</span><span className="u">,</span></span>{'\n'}
-<span className="in"><span className="p">stack</span><span className="u">: [</span><span className="s">'HTML'</span><span className="u">,</span> <span className="s">'CSS'</span><span className="u">,</span> <span className="s">'JavaScript'</span><span className="u">,</span> <span className="s">'Liquid'</span><span className="u">,</span> <span className="s">'React'</span><span className="u">],</span></span>{'\n'}
-<span className="in"><span className="p">learning</span><span className="u">: [</span><span className="s">'Machine Learning'</span><span className="u">,</span> <span className="s">'AI Agents'</span><span className="u">],</span></span>{'\n'}
-<span className="in"><span className="p">likes</span><span className="u">:</span> <span className="s">'turning ideas into UI'</span><span className="u">,</span></span>{'\n'}
-<span className="u">{'};'}</span>{'\n\n'}
-<span className="c">{'// thanks for stopping by'}</span><span className="cursor" aria-hidden="true" />
-              </code></pre>
-            </div>
-          </div>
+          <Terminal />
         </div>
       </div>
     </section>
