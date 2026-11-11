@@ -1,39 +1,43 @@
-import React from 'react';
-import { Routes, Route,useLocation } from 'react-router-dom';
-import './App.scss';
-import About from './containers/about';
-import Home from './containers/home';
-import Resume from './containers/resume';
-import Skills from './containers/skills';
-import Projects from './containers/projects';
-import Contact from './containers/contact';
-import Profiles from './containers/profiles';
-import Navbar from './components/navBar';
-import Back from './utils/particles';
-function App() {
-  const location=useLocation();
-  const ren=location.pathname==='/gayathri/';
-  return (
-    <div className="App">
-      {/* Particle.js */}
-      {ren &&<Back />}
-       
-      {/* Navbar */}
-      <Navbar />
-      {/* Main page content */}
-      <div className="App__main-page-content">
-      <Routes>
-        <Route index path="/gayathri/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/profiles" element={<Profiles />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      </div>
-    </div>
-  );
+import React, { useEffect } from 'react';
+import './App.css';
+import Header from './components/Header';
+import {
+  Hero, Stats, About, Experience, Projects, Skills, Education, Achievements, Contact, Footer,
+} from './components/Sections';
+
+function useReveal() {
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return undefined;
+    const els = document.querySelectorAll('.tl-item, .project, .skill-card, .edu-card, .profile, .stat');
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
+      }),
+      { rootMargin: '0px 0px -8% 0px' }
+    );
+    els.forEach((el) => { el.classList.add('reveal'); obs.observe(el); });
+    return () => obs.disconnect();
+  }, []);
 }
 
-export default App;
+export default function App() {
+  useReveal();
+  return (
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Stats />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+}
