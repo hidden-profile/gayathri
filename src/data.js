@@ -6,7 +6,6 @@ export const profile = {
   email: 'gayathrikarri289@gmail.com',
   phone: '+91 93812 21289',
   phoneHref: 'tel:+919381221289',
-  location: 'Hyderabad, India',
   resume: `${process.env.PUBLIC_URL}/Gayathri_Karri_Resume.pdf`,
   github: 'https://github.com/hidden-profile',
   linkedin: 'https://www.linkedin.com/in/gayathri-karri-03a087243',
@@ -15,12 +14,12 @@ export const profile = {
   hackerrank: 'https://www.hackerrank.com/gayathrikarri289',
 };
 
-export const stats = [
-  { num: '40-50 → 200', label: 'orders per day on DistaUSA' },
-  { num: '1', label: 'front end developer on the store' },
-  { num: '300+', label: 'DSA problems solved' },
-  { num: '2026-28', label: 'MTech, Artificial Intelligence' },
-];
+// EmailJS settings for the contact form (public keys, safe to keep in the code)
+export const emailjs = {
+  serviceId: 'gayathri',
+  templateId: 'gayathri',
+  publicKey: 'pBMClaAjwIpNp3FXP',
+};
 
 export const experience = [
   {
@@ -28,13 +27,13 @@ export const experience = [
     place: 'Distacart Inc',
     title: 'Front End Developer',
     badge: 'Full time',
-    sub: 'DistaUSA (Shopify storefront)',
+    sub: 'DistaUSA (Shopify store)',
     points: [
-      'Only front end developer on DistaUSA; I handle UI design, development and day-to-day maintenance.',
-      'Redesigned the whole storefront and kept shipping new sections and features, many of them my own ideas taken from studying other e-commerce sites.',
-      'Daily orders went from roughly 40-50 when I joined to around 200 now.',
-      'Work directly with third-party app teams integrated into the store to debug and fix integration issues.',
-      'Design and build all customer-facing UI on top of the Apploy-managed backend.',
+      'Look after the front end of DistaUSA: design, theme code and keeping things running smoothly.',
+      'Redesigned the store and keep adding new sections and features. Many of these ideas came from looking at how other online stores work.',
+      'Build the UI on top of the Apploy app, which handles the backend.',
+      'Work with the teams behind the third-party apps on the store whenever an integration needs fixing.',
+      'When I started, the store got around 40-50 orders a day. Today it gets around 200.',
     ],
   },
   {
@@ -42,23 +41,21 @@ export const experience = [
     place: 'Distacart Inc',
     title: 'Front End Developer Intern',
     points: [
-      'Maintained a production Shopify website and learned store management, theme development and Shopify app creation.',
-      'Converted to a full-time role at the end of the internship.',
+      'Learned Shopify on a live store: managing it, editing themes and building Shopify apps.',
+      'Joined full time after the internship.',
     ],
   },
   {
     date: 'May 2024 - Jun 2024',
     place: 'Internship',
     title: 'Web Development Intern',
-    points: ['One-month training on React fundamentals; built several small websites in React.'],
+    points: ['A month of React training, where I built a few small websites.'],
   },
   {
     date: 'May 2023 - Jun 2023',
     place: 'YHills',
     title: 'Artificial Intelligence Intern',
-    points: [
-      'Did exploratory data analysis and visualisation on several datasets and built supervised classification and regression models.',
-    ],
+    points: ['Explored and visualised datasets, and built some classification and regression models.'],
   },
 ];
 
@@ -69,42 +66,42 @@ export const projects = [
     title: 'Cost-Optimized Predictive Maintenance for Wind Turbines',
     url: 'https://github.com/hidden-profile/cost-optimized-predictive-maintenance-for-wind-turbines-using-ml',
     text:
-      'Predicts generator failures from 40 anonymised sensor readings (40,000 training rows). Instead of plain accuracy, models were scored on a custom cost metric that weighs repair, replacement and inspection costs. Compared seven algorithms with original, SMOTE-oversampled and undersampled data; a tuned XGBoost pipeline won, scoring 0.79 on the test set (cost within about 1.26x of the theoretical minimum). Served through a Streamlit app.',
+      'My final year project. It predicts wind turbine generator failures from sensor data. Instead of just going for accuracy, I scored the models on what their mistakes would cost in repairs, replacements and inspections. I tried seven algorithms, and a tuned XGBoost model worked best. There is also a small Streamlit app to try it out.',
     tech: ['Python', 'XGBoost', 'scikit-learn', 'SMOTE', 'Streamlit'],
   },
   {
     tag: 'Generative AI',
     title: 'YouTube Video Summarizer',
     url: 'https://github.com/hidden-profile/youtube-video-summarizer',
-    text: 'Paste a YouTube link and get short notes. Pulls the transcript with the YouTube Transcript API and sends it to Google Gemini with a summarisation prompt.',
+    text: 'Paste in a YouTube link and it gives you short notes on the video. It grabs the transcript and asks Gemini to summarise it.',
     tech: ['Python', 'Gemini API', 'Prompting', 'Streamlit'],
   },
   {
     tag: 'Hackathon',
     title: 'Care Companion',
     url: 'https://github.com/hidden-profile/care-companion',
-    text: 'A web platform that connects caretakers with people who need care in the same area.',
+    text: 'Made at a hackathon. A website that helps people find caretakers near them.',
     tech: ['PHP', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     tag: 'Web app',
     title: 'TradeLiber',
     url: 'https://github.com/hidden-profile/tradeliber-onlinebooksresellingsystem',
-    text: "An online marketplace for reselling used books cheaply, so students who can't afford new copies can still get them.",
+    text: 'A site where students can sell their old books cheaply to other students who need them.',
     tech: ['PHP', 'MySQL', 'HTML', 'CSS'],
   },
   {
     tag: 'Deep learning',
     title: 'Handwritten Digit Recognition',
     url: 'https://github.com/hidden-profile/handwritten-number-prediction',
-    text: 'A neural network trained on MNIST with TensorFlow, using OpenCV to load and visualise digit images.',
+    text: 'A small neural network trained on the MNIST dataset to recognise handwritten digits.',
     tech: ['TensorFlow', 'OpenCV', 'Python'],
   },
   {
     tag: 'Desktop app',
     title: 'Student Database Management System',
     url: 'https://github.com/hidden-profile/Student-database-management-system',
-    text: 'A Python GUI app for managing student records with full CRUD operations, backed by PostgreSQL.',
+    text: 'A desktop app for adding, updating and searching student records, with the data stored in PostgreSQL.',
     tech: ['Python', 'PostgreSQL', 'Tkinter'],
   },
 ];
@@ -119,9 +116,9 @@ export const skills = [
 ];
 
 export const education = [
-  { current: true, date: '2026 - 2028', title: 'MTech, Artificial Intelligence', place: "Vignan's Institute of Information Technology", score: 'In progress' },
-  { date: '2021 - 2025', title: 'BTech, Computer Science and Engineering', place: "Vignan's Institute of Information Technology", score: 'CGPA 9.56 / 10' },
-  { date: '2019 - 2021', title: 'Intermediate (MPC)', place: 'Sri Chaitanya Junior College, Visakhapatnam', score: '975 / 1000' },
+  { date: '2026 - 2028', title: 'MTech, Artificial Intelligence', place: "Vignan's Institute of Information Technology" },
+  { date: '2021 - 2025', title: 'BTech, Computer Science and Engineering', place: "Vignan's Institute of Information Technology", score: 'CGPA 9.56' },
+  { date: '2019 - 2021', title: 'Intermediate (MPC)', place: 'Sri Chaitanya Junior College, Visakhapatnam' },
 ];
 
 export const achievements = [

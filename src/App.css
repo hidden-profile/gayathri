@@ -167,7 +167,7 @@ ul, ol { margin: 0; padding: 0; }
 .nav-links a { display: block; padding: 12px 14px; border-radius: 10px; color: var(--text); font-weight: 500; text-decoration: none; }
 .nav-links a:hover, .nav-links a.active { background: var(--accent-soft); color: var(--accent-text); }
 .nav-links .nav-cta { margin-top: 6px; }
-.nav-links .nav-cta a { color: #fff; width: 100%; }
+.nav-links .nav-cta a { display: flex; align-items: center; justify-content: center; padding: 0 18px; line-height: 1; color: #fff; width: 100%; }
 :root[data-theme="dark"] .nav-links .nav-cta a { color: #0b1120; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nav-links .nav-cta a { color: #0b1120; } }
 
@@ -179,8 +179,8 @@ ul, ol { margin: 0; padding: 0; }
   pointer-events: none;
 }
 .hero-grid { display: grid; gap: 40px; position: relative; }
-.hero-copy { order: 2; }
-.hero-photo { order: 1; }
+.hero-copy { order: 1; }
+.hero-code { order: 2; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -209,25 +209,42 @@ ul, ol { margin: 0; padding: 0; }
 .socials a:hover { color: var(--accent-text); border-color: var(--accent); transform: translateY(-2px); }
 .socials svg { width: 20px; height: 20px; fill: currentColor; }
 
-.photo-frame {
-  width: min(78vw, 340px); aspect-ratio: 1; margin: 0 auto;
-  border-radius: 32px; padding: 6px;
+/* Code card in the hero */
+.hero-code { width: 100%; max-width: 460px; margin: 0 auto; }
+.code-frame {
+  border-radius: 20px; padding: 5px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: var(--shadow-lg);
-  transform: rotate(-2deg);
 }
-.photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 26px; transform: rotate(2deg); background: var(--surface); }
-.hero-photo { position: relative; width: fit-content; margin: 0 auto; }
-
-.floating-card {
-  position: absolute; display: flex; flex-direction: column;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-  padding: 10px 14px; box-shadow: var(--shadow); max-width: 170px;
+.code-window {
+  --c-key: #c084fc; --c-prop: #7dd3fc; --c-str: #86efac; --c-punc: #94a3b8; --c-com: #64748b;
+  background: #0f172a; color: #e2e8f0; border-radius: 16px; overflow: hidden;
 }
-.fc-num { font: 700 20px/1.1 var(--display); color: var(--accent-text); }
-.fc-label { font-size: 12px; color: var(--muted); line-height: 1.3; }
-.fc-1 { left: -8px; bottom: 18px; }
-.fc-2 { right: -8px; top: 18px; }
+.code-bar {
+  display: flex; align-items: center; gap: 7px;
+  padding: 12px 16px; background: #131c31; border-bottom: 1px solid #1f2a44;
+}
+.code-bar .d { width: 11px; height: 11px; border-radius: 50%; }
+.code-bar .r { background: #f87171; }
+.code-bar .y { background: #fbbf24; }
+.code-bar .g { background: #34d399; }
+.code-file { margin-left: 8px; font: 500 12px/1 ui-monospace, "Cascadia Code", Consolas, monospace; color: #94a3b8; }
+.code-window pre {
+  margin: 0; padding: 18px 18px 20px;
+  font: 13px/1.75 ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.code-window .k { color: var(--c-key); }
+.code-window .p { color: var(--c-prop); }
+.code-window .s { color: var(--c-str); }
+.code-window .u { color: var(--c-punc); }
+.code-window .c { color: var(--c-com); font-style: italic; }
+.code-window .in { padding-left: 2ch; display: inline-block; }
+.cursor {
+  display: inline-block; width: 8px; height: 1.05em; margin-left: 2px; vertical-align: -2px;
+  background: #e2e8f0; animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 
 /* ---------- Stats ---------- */
 .stats-band { border-block: 1px solid var(--border); background: var(--surface); }
@@ -326,8 +343,7 @@ ul, ol { margin: 0; padding: 0; }
 .edu-card h3 { font-size: 1.15rem; }
 .edu-card p { color: var(--muted); margin: 0; }
 .edu-date { font-size: 13px; font-weight: 600; color: var(--subtle); }
-.edu-score { margin-top: 8px; font: 700 1.05rem/1.2 var(--display); color: var(--accent-text); }
-.edu-card.current { border-color: var(--accent); }
+.edu-score { font-size: 14px; color: var(--subtle); }
 
 /* ---------- Achievements / Profiles ---------- */
 .two-col { display: grid; gap: 48px; }
@@ -399,13 +415,11 @@ ul, ol { margin: 0; padding: 0; }
   .project-grid, .skill-grid { grid-template-columns: repeat(2, 1fr); }
   .project.featured { grid-column: 1 / -1; }
   .edu-grid { grid-template-columns: repeat(2, 1fr); }
-  .edu-card.current { grid-column: 1 / -1; }
+  .edu-card:first-child { grid-column: 1 / -1; }
   .field-row { grid-template-columns: 1fr 1fr; }
   .contact-form { padding: 28px; }
   .hero-cta .btn { flex: 0 0 auto; }
-  .floating-card { max-width: 190px; }
-  .fc-1 { left: -40px; }
-  .fc-2 { right: -40px; }
+  .code-window pre { font-size: 14px; padding: 20px 22px 22px; }
   .tl-body { padding: 22px 24px; }
 }
 
@@ -421,16 +435,15 @@ ul, ol { margin: 0; padding: 0; }
   }
   .nav-links a { padding: 8px 12px; font-size: 15px; }
   .nav-links .nav-cta { margin: 0 0 0 8px; }
-  .nav-links .nav-cta a { width: auto; padding: 0 18px; }
+  .nav-links .nav-cta a { display: inline-flex; width: auto; padding: 0 18px; }
   .nav { justify-content: flex-start; }
   .brand { margin-right: auto; }
   .nav-actions { order: 3; margin-left: 8px; }
 
   .hero { padding: 80px 0 96px; }
   .hero-grid { grid-template-columns: 1.25fr 1fr; align-items: center; gap: 56px; }
-  .hero-copy { order: 1; }
-  .hero-photo { order: 2; }
-  .photo-frame { width: 360px; }
+  .code-frame { transform: rotate(1.5deg); }
+  .code-window { transform: rotate(-1.5deg); }
 
   .section { padding: 96px 0; }
   .about-grid { grid-template-columns: 1fr 1.6fr; gap: 48px; }
@@ -445,7 +458,7 @@ ul, ol { margin: 0; padding: 0; }
   .project.featured { grid-column: span 3; }
   .skill-grid { grid-template-columns: repeat(3, 1fr); }
   .edu-grid { grid-template-columns: repeat(3, 1fr); }
-  .edu-card.current { grid-column: auto; }
+  .edu-card:first-child { grid-column: auto; }
 
   .two-col { grid-template-columns: 1fr 1fr; gap: 56px; }
   .contact-wrap { grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: start; }

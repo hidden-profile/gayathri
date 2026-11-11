@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { profile, stats, experience, projects, skills, education, achievements } from '../data';
+import { profile, emailjs, experience, projects, skills, education, achievements } from '../data';
 import { GitHubIcon, LinkedInIcon, LeetCodeIcon, CodeChefIcon, MailIcon, ArrowIcon } from './Icons';
-import photo from '../assets/photo.jpg';
 import codechefLogo from '../assets/codechef.png';
 import leetcodeLogo from '../assets/leetcode.jpeg';
 import hackerrankLogo from '../assets/hackerrank.png';
@@ -23,11 +22,10 @@ export function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow"><span className="dot" /> {profile.role}</p>
-          <h1>Hi, I'm Gayathri.<br /><span className="accent">I build storefronts people buy from.</span></h1>
+          <h1>Hi, I'm Gayathri.<br /><span className="accent">I'm a front end developer.</span></h1>
           <p className="lead">
-            I'm the front end developer behind <strong>DistaUSA</strong>, a Shopify store under Distacart.
-            Since I took over its UI, daily orders have gone from around 50 to around 200.
-            I'm also doing an MTech in Artificial Intelligence, because ML is where I want to grow next.
+            I work at Distacart on <strong>DistaUSA</strong>, our Shopify store. Most of my day goes
+            into its design and theme code, and into trying out new ideas to make the store easier to shop on.
           </p>
           <div className="hero-cta">
             <a className="btn btn-primary" href={profile.resume} {...ext}>Download resume</a>
@@ -41,34 +39,27 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="hero-photo">
-          <div className="photo-frame">
-            <img src={photo} alt="Portrait of Gayathri Karri" width="420" height="420" />
-          </div>
-          <div className="floating-card fc-1">
-            <span className="fc-num">~4x</span>
-            <span className="fc-label">daily orders on DistaUSA</span>
-          </div>
-          <div className="floating-card fc-2">
-            <span className="fc-num">9.56</span>
-            <span className="fc-label">BTech CGPA</span>
+        <div className="hero-code">
+          <div className="code-frame">
+            <div className="code-window">
+              <div className="code-bar" aria-hidden="true">
+                <span className="d r" /><span className="d y" /><span className="d g" />
+                <span className="code-file">gayathri.js</span>
+              </div>
+              <pre><code>
+<span className="k">const</span> <span className="p">gayathri</span> <span className="u">= {'{'}</span>{'\n'}
+<span className="in"><span className="p">role</span><span className="u">:</span> <span className="s">'Front End Developer'</span><span className="u">,</span></span>{'\n'}
+<span className="in"><span className="p">workingOn</span><span className="u">:</span> <span className="s">'DistaUSA'</span><span className="u">,</span></span>{'\n'}
+<span className="in"><span className="p">platform</span><span className="u">:</span> <span className="s">'Shopify'</span><span className="u">,</span></span>{'\n'}
+<span className="in"><span className="p">stack</span><span className="u">: [</span><span className="s">'HTML'</span><span className="u">,</span> <span className="s">'CSS'</span><span className="u">,</span> <span className="s">'JavaScript'</span><span className="u">,</span> <span className="s">'Liquid'</span><span className="u">,</span> <span className="s">'React'</span><span className="u">],</span></span>{'\n'}
+<span className="in"><span className="p">learning</span><span className="u">: [</span><span className="s">'Machine Learning'</span><span className="u">,</span> <span className="s">'AI Agents'</span><span className="u">],</span></span>{'\n'}
+<span className="in"><span className="p">likes</span><span className="u">:</span> <span className="s">'turning ideas into UI'</span><span className="u">,</span></span>{'\n'}
+<span className="u">{'};'}</span>{'\n\n'}
+<span className="c">{'// thanks for stopping by'}</span><span className="cursor" aria-hidden="true" />
+              </code></pre>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function Stats() {
-  return (
-    <section className="stats-band" aria-label="Highlights">
-      <div className="container stats">
-        {stats.map((s) => (
-          <div className="stat" key={s.label}>
-            <span className="stat-num">{s.num}</span>
-            <span className="stat-label">{s.label}</span>
-          </div>
-        ))}
       </div>
     </section>
   );
@@ -80,25 +71,23 @@ export function About() {
       <div className="container about-grid">
         <div>
           <p className="section-kicker">About</p>
-          <h2>A front end developer with one foot in AI.</h2>
+          <h2>A little about me</h2>
         </div>
         <div className="about-text">
           <p>
-            I joined Distacart as an intern in January 2025 and learned on a live store from day one:
-            Shopify themes, store management, building Shopify apps and the front end basics that hold it all together.
-            In August 2025 I moved to full time and was handed DistaUSA.
+            I joined Distacart as an intern in January 2025. That's where I learned Shopify properly, on a live store:
+            managing it, editing themes, building Shopify apps and the front end basics behind all of it.
+            In August 2025 I joined full time and started working on DistaUSA.
           </p>
           <p>
-            On DistaUSA I own everything the customer sees. The backend comes from the Apploy app; the design,
-            the theme code and most of the ideas are mine. I spend a lot of time studying other stores, picking out what
-            actually helps people shop, and turning that into features on our site. A big part of the job is also
-            working with the teams behind every third-party app that plugs into the store and getting those
-            integrations to behave.
+            The store's backend runs on the Apploy app, and I take care of the front end on top of it. I like looking
+            at how other online stores do things and trying the good ideas out on ours. I also work with the teams
+            behind the apps we use on the store whenever something needs fixing.
           </p>
           <p>
-            Outside work I'm doing an MTech in Artificial Intelligence at Vignan's Institute of Information Technology.
-            I've been learning prompt engineering and the basics of building agents, and my final year BTech project
-            was an ML model for predicting wind turbine failures.
+            I've been interested in machine learning since college, and my final year project was about predicting
+            wind turbine failures. These days I'm learning prompt engineering and how AI agents are built, alongside
+            my MTech at Vignan's Institute of Information Technology.
           </p>
         </div>
       </div>
@@ -189,11 +178,11 @@ export function Education() {
         <h2>Where I studied</h2>
         <div className="edu-grid">
           {education.map((e) => (
-            <article className={`edu-card${e.current ? ' current' : ''}`} key={e.title}>
+            <article className="edu-card" key={e.title}>
               <span className="edu-date">{e.date}</span>
               <h3>{e.title}</h3>
               <p>{e.place}</p>
-              <span className="edu-score">{e.score}</span>
+              {e.score && <span className="edu-score">{e.score}</span>}
             </article>
           ))}
         </div>
@@ -240,13 +229,15 @@ export function Achievements() {
 }
 
 export function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const empty = { name: '', email: '', subject: '', message: '' };
+  const [form, setForm] = useState(empty);
   const [invalid, setInvalid] = useState({});
-  const [note, setNote] = useState('This opens your email app with the message filled in.');
+  const [note, setNote] = useState('');
+  const [sending, setSending] = useState(false);
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const bad = {
       name: !form.name.trim(),
@@ -258,10 +249,33 @@ export function Contact() {
       setNote('Please fill in your name, a valid email and a message.');
       return;
     }
-    const subject = form.subject.trim() || 'Hello from your portfolio';
-    const body = `${form.message.trim()}\n\n${form.name.trim()}\n${form.email.trim()}`;
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setNote('Opening your email app...');
+    setSending(true);
+    setNote('');
+    const subject = form.subject.trim();
+    try {
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: emailjs.serviceId,
+          template_id: emailjs.templateId,
+          user_id: emailjs.publicKey,
+          template_params: {
+            name: form.name.trim(),
+            email: form.email.trim(),
+            subject,
+            message: subject ? `${subject}\n\n${form.message.trim()}` : form.message.trim(),
+          },
+        }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      setForm(empty);
+      setNote("Thanks! Your message has been sent and I'll get back to you soon.");
+    } catch (err) {
+      setNote(`Sorry, that didn't go through. You can email me directly at ${profile.email}.`);
+    } finally {
+      setSending(false);
+    }
   };
 
   const cls = (n) => (invalid[n] ? 'invalid' : undefined);
@@ -272,11 +286,10 @@ export function Contact() {
         <div className="contact-copy">
           <p className="section-kicker">Contact</p>
           <h2>Let's talk.</h2>
-          <p>Open to front end, Shopify and AI/ML roles. The quickest way to reach me is email.</p>
+          <p>If you'd like to talk about a role or anything else, send me a message here or drop me an email.</p>
           <ul className="contact-list">
             <li><span>Email</span><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
             <li><span>Phone</span><a href={profile.phoneHref}>{profile.phone}</a></li>
-            <li><span>Location</span><p>{profile.location}</p></li>
             <li><span>LinkedIn</span><a href={profile.linkedin} {...ext}>gayathri-karri</a></li>
           </ul>
         </div>
@@ -300,7 +313,9 @@ export function Contact() {
             <span>Message</span>
             <textarea className={cls('message')} name="message" rows="5" required placeholder="Write your message" value={form.message} onChange={update} />
           </label>
-          <button className="btn btn-primary btn-block" type="submit">Send message</button>
+          <button className="btn btn-primary btn-block" type="submit" disabled={sending}>
+            {sending ? 'Sending...' : 'Send message'}
+          </button>
           <p className="form-note" aria-live="polite">{note}</p>
         </form>
       </div>
