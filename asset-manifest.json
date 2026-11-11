@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gayathri/static/css/main.965eb098.css",
+    "main.css": "/gayathri/static/css/main.bb811383.css",
     "main.js": "/gayathri/static/js/main.b28170cb.js",
     "static/media/codechef.png": "/gayathri/static/media/codechef.400aba84e8ae83ac38b7.png",
     "static/media/hackerrank.png": "/gayathri/static/media/hackerrank.fce953ff835e001d8631.png",
     "index.html": "/gayathri/index.html",
-    "main.965eb098.css.map": "/gayathri/static/css/main.965eb098.css.map",
+    "main.bb811383.css.map": "/gayathri/static/css/main.bb811383.css.map",
     "main.b28170cb.js.map": "/gayathri/static/js/main.b28170cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.965eb098.css",
+    "static/css/main.bb811383.css",
     "static/js/main.b28170cb.js"
   ]
 }
