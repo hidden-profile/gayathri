@@ -178,7 +178,8 @@ ul, ol { margin: 0; padding: 0; }
   background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent);
   pointer-events: none;
 }
-.hero-grid { display: grid; gap: 40px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; position: relative; }
+.hero-grid > * { min-width: 0; }
 .hero-copy { order: 1; }
 .hero-code { order: 2; }
 
@@ -262,7 +263,7 @@ ul, ol { margin: 0; padding: 0; }
 .t-input-row { display: flex; align-items: baseline; gap: 8px; margin: 0; }
 .t-input-row label { white-space: nowrap; }
 .t-input-row input {
-  flex: 1; min-width: 0; padding: 0; border: 0; outline: none; background: transparent;
+  flex: 1; min-width: 0; width: 100%; padding: 0; border: 0; outline: none; background: transparent;
   font: inherit; color: #e2e8f0; caret-color: #e2e8f0;
 }
 .t-input-row input::placeholder { color: #475569; }
@@ -443,6 +444,50 @@ ul, ol { margin: 0; padding: 0; }
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* ==========================================================
+   Phones (< 600px): slightly smaller type and spacing
+   ========================================================== */
+@media (max-width: 599px) {
+  body { font-size: 15px; line-height: 1.6; }
+  .hero { padding: 28px 0 44px; }
+  .hero-grid { gap: 32px; }
+  .hero h1 { font-size: 1.75rem; margin-bottom: 14px; }
+  .eyebrow { font-size: 12px; padding: 5px 10px; margin-bottom: 14px; }
+  .lead { font-size: 0.95rem; }
+  .hero-cta { margin: 20px 0; gap: 10px; }
+  .btn { min-height: 44px; font-size: 14px; }
+  .socials a { width: 40px; height: 40px; }
+  .socials svg { width: 18px; height: 18px; }
+
+  .t-body { height: 260px; font-size: 12px; line-height: 1.6; padding: 14px 14px 10px; }
+  .code-bar { padding: 10px 14px; }
+  .t-quick { padding: 8px 12px 12px; gap: 5px; }
+  .t-quick button { font-size: 11px; padding: 6px 9px; }
+
+  .section { padding: 48px 0; }
+  .section h2 { font-size: 1.45rem; margin-bottom: 20px; }
+  .section-kicker { font-size: 12px; }
+  .section-intro { margin: -8px 0 20px; }
+  .about-text p { font-size: 0.95rem; }
+
+  .tl-body { padding: 14px 16px; }
+  .tl-body h3 { font-size: 1.02rem; }
+  .tl-body ul { font-size: 0.92rem; }
+  .tl-meta { font-size: 13px; }
+
+  .project { padding: 18px; }
+  .project h3 { font-size: 1.05rem; }
+  .project p { font-size: 0.92rem; }
+  .chips li { font-size: 12px; padding: 4px 9px; }
+
+  .skill-card { padding: 16px; }
+  .edu-card { padding: 18px; }
+  .edu-card h3 { font-size: 1.02rem; }
+  .check-list li { font-size: 0.92rem; }
+  .profile { padding: 12px 14px; }
+  .contact-form { padding: 16px; }
+}
 
 /* ==========================================================
    >= 600px
