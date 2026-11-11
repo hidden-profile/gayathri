@@ -19,8 +19,9 @@ npm start
 
 ## Deploy
 
-```bash
-npm run deploy
-```
+Deploys are automatic. Every push to `main` runs the GitHub Actions workflow in
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the site and publishes it to the
+`gh-pages` branch that GitHub Pages serves. Progress shows under the repo's **Actions** tab, and the site
+updates a minute or two after it finishes.
 
-This builds the app and publishes the `build` folder to the `gh-pages` branch, which GitHub Pages serves.
+`npm run deploy` still works from a terminal that is signed in to GitHub as `hidden-profile`.
